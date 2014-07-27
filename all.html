@@ -18,9 +18,11 @@
 <template name="nav">
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <div class="container">
+      <p class="navbar-text" style="margin-right: 10px;">Sections</p>
       {{#each sections}}
         <button type="button" class="btn {{#if isSelectedSection}}btn-default{{/if}} navbar-btn btn-sm select-section">
-          <i class="fa {{icon}}"></i> <span class="hidden-xs">{{title}}</span>
+          <span class="hidden-xs"> <i class="fa {{icon}}"></i> {{title}}</span>
+          <span class="visible-xs hidden-sm hidden-md hidden-lg"> <i class="fa {{icon}}"></i> </span>
         </button>
       {{/each}}
     </div>
@@ -46,21 +48,31 @@
       <p class="lead">
         Covenant Conference will be an amazing weekend at Enjoy Church in Melbourne. We will be hearing from the following world-renown speakers, Leon Fontain from Springs church Canada and Enjoy's own Shane Baxter. But that’s just the icing on the cake - it’s going to be a great time to just get away together!
       </p>
-      <ul class="unstyled">
-        <strong>Key Info</strong>
-        <li>Meals: Some meals are provided at the conference, bring cash for other meals.</li>
-        <li>Luggage: Carry on luggage only.</li>
-        <li>Registration: We will be picking up the armbands on the first night.</li>
-        <li><a href="http://www.covenantmensconference.com/">Conference Website</a></li>
-      </ul>
-      <p class="list-group-item-text">
-        <strong>Conference Contact</strong>
-        <ul class="unstyled">
-          <li>LB (Ben) Johnston</li>
-          <li>Email: lb@lifechurchcentral.com</li>
-          <li>Mobile: 0414 446 068</li>
-        </ul>
-      </p>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <strong>Key Info</strong>
+          <ul class="unstyled">
+            <li>Meals: Some meals are provided at the conference, bring cash for other meals.</li>
+            <li>Luggage: Carry on luggage only.</li>
+            <li>Registration: We will be picking up the armbands on the first night.</li>
+            <li><a href="http://www.covenantmensconference.com/">Conference Website</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <p class="list-group-item-text">
+            <strong>Conference Contact</strong>
+            <ul class="unstyled">
+              <li>LB (Ben) Johnston</li>
+              <li>Email: lb@lifechurchcentral.com</li>
+              <li>Mobile: 0414 446 068</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <strong>Weather</strong>
+          <iframe style="display: block;width:100%;height:228px;" src="http://cdn1.willyweather.com.au/widget/loadView.html?id=13562" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
     </div>
     <div class="panel-footer hidden-print">
       Info
@@ -457,6 +469,7 @@
         <ul class="unstyled">
           <li>Reservation name: Mr. Geoff Blight</li>
           <li>Reservation number: I56-05UZ</li>
+          <li>Note: Requested single beds for all (normally king bed) rooms.</li>
         </ul>
       </p>
       <div class="row">
@@ -464,7 +477,8 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <strong>Room 1</strong><br>
-              Room 1: King-size bed (Grant &amp; Mark) + Sofa bed (LB)
+              2 x Single Beds + Sofa Bed<br>
+              People: LB, Lex &amp; Jamie
             </div>
           </div>
         </div>
@@ -472,7 +486,8 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <strong>Room 2</strong><br>
-              King-size bed (Lex &amp; Jamie) + Sofa bed (Sam &amp; Craig)
+              2 x Single Beds + Sofa Bed<br>
+              People: Grant, Sam &amp; Craig
             </div>
           </div>
         </div>
@@ -480,7 +495,8 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <strong>Room 3</strong><br>
-              King-size bed (Ps Geoff)
+              2 x Single Beds<br>
+              People: Ps Geoff &amp; Mark
             </div>
           </div>
         </div>
