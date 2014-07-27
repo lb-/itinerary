@@ -10,6 +10,9 @@
       },
       "font-awesome": {
         "version": "4.1.0"
+      },
+      "timesync": {
+        "version": "0.2.1"
       }
     },
     "packages": {
@@ -27,6 +30,11 @@
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v4.1.0",
         "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
+      },
+      "timesync": {
+        "git": "https://github.com/mizzao/meteor-timesync.git",
+        "tag": "v0.2.1",
+        "commit": "fa4abd511f4e32a3c5d22795ce2c1e8369428fac"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

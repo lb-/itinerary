@@ -3,10 +3,10 @@
     <title>itinerary</title>
   </head>
   <body>
-    <nav id="top"></nav>
     <div class="container">
       {{> yield}}
     </div>
+    {{>nav}}
   </body>
 </template>
 
@@ -14,27 +14,64 @@
   <h1>Itineraries</h1>
 </template>
 
-<template name="itinerary">
+<template name="nav">
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container">
+      {{#each sections}}
+        <button type="button" class="btn {{#if isSelectedSection}}btn-default{{/if}} navbar-btn btn-sm select-section">
+          <i class="fa {{icon}}"></i> <span class="hidden-xs">{{title}}</span>
+        </button>
+      {{/each}}
+    </div>
+  </nav>
+</template>
+
+<template name="header">
   <div class="page-header">
-    <h1>
+    <h2>
       Covenant Men's Conference<br>
       <small>Friday the 1st of August to Saturday the 2nd of August</small>
-    </h1>
-    <p class="lead">
-      Covenant Conference will be an amazing weekend at Enjoy Church in Melbourne. We will be hearing from the following world-renown speakers, Leon Fontain from Springs church Canada and Enjoy's own Shane Baxter . But that’s just the icing on the cake - it’s going to be a great time to just get away together!
-    </p>
-    <ul class="unstyled">
-      <li>Departing: Friday 1st August 2014 (morning flight).</li>
-      <li>Returning: Saturday 2nd August 2014 (late night flight, returning before 11pm).</li>
-      <li>Meals: Some meals are provided at the conference, bring cash for other meals.</li>
-      <li>Luggage: Carry on luggage only.</li>
-    </ul>
+    </h2>
   </div>
+</template>
+
+<template name="info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2 class="panel-title">
+      <h1 class="panel-title">Info</h1>
+    </div>
+    <div class="panel-body">
+      <p class="lead">
+        Covenant Conference will be an amazing weekend at Enjoy Church in Melbourne. We will be hearing from the following world-renown speakers, Leon Fontain from Springs church Canada and Enjoy's own Shane Baxter . But that’s just the icing on the cake - it’s going to be a great time to just get away together!
+      </p>
+      <ul class="unstyled">
+        <li>Meals: Some meals are provided at the conference, bring cash for other meals.</li>
+        <li>Luggage: Carry on luggage only.</li>
+        <li>Conference Website: <a href="http://www.covenantmensconference.com/">http://www.covenantmensconference.com/</a></li>
+      </ul>
+      <p class="list-group-item-text">
+        <strong>Conference Contact</strong>
+        <ul class="unstyled">
+          <li>LB (Ben) Johnston</li>
+          <li>Email: lb@lifechurchcentral.com</li>
+          <li>Mobile: 0414 446 068</li>
+        </ul>
+      </p>
+    </div>
+    <div class="panel-footer hidden-print">
+      Info
+      <p class="pull-right"><button class="btn top btn-xs"><i class="fa fa-chevron-up"></i></button></p>
+    </div>
+  </div>
+</template>
+
+
+<template name="schedule">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">
         Itinerary
-      </h2>
+      </h1>
     </div>
     <div class="panel-body">
       <h3>Friday the 1st of August</h3>
@@ -68,7 +105,8 @@
           Flight from Brisbane to Melbourne.
         </h4>
         <p class="list-group-item-text">
-          VA304 : BRISBANE, AUSTRALIA (Domestic Terminal) 5:55AM to MELBOURNE, AUSTRALIA (Terminal 3) 8:20AM.
+          <strong>VA304</strong><br>
+          BRISBANE, AUSTRALIA (Domestic Terminal) 5:55AM to MELBOURNE, AUSTRALIA (Terminal 3) 8:20AM.
           <ul>
             <li>XNRPIY Mr Grant Robinson</li>
             <li>XNRPIY Mr Mark Mohoney</li>
@@ -108,28 +146,8 @@
           Hotel Check In
         </h4>
         <p class="list-group-item-text">
-          <strong>Mercure Melbourne Caroline Springs</strong>
-          <ul class="unstyled">
-            <li>reception@westwatershotel.com.au</li>
-            <li>Tel: (+61)03/83580555</li>
-            <li>10 20 Lake Street - 3023 CAROLINE SPRINGS</li>
-            <li>http://www.mercure.com/gb/hotel-8249-mercure-melbourne-caroline-springs/index.shtml</li>
-          </ul>
-        </p>
-        <p class="list-group-item-text">
-          <strong>Reservation</strong>
-          <ul class="unstyled">
-            <li>Reservation name: Mr. Geoff Blight</li>
-            <li>Reservation number: I56-05UZ</li>
-          </ul>
-        </p>
-        <p class="list-group-item-text">
-          <strong>Rooms</strong>
-          <ul>
-            <li>Room 1: King-size bed (Grant &amp; Mark) + Sofa bed (LB)</li>
-            <li>Room 2: King-size bed (Lex &amp; Jamie) + Sofa bed (Sam &amp; Craig)</li>
-            <li>Room 3: King-size bed (Ps Geoff)</li>
-          </ul>
+          Mercure Melbourne Caroline Springs<br>
+          Address: 10/20 Lake Street, 3023 CAROLINE SPRINGS
         </p>
       </li>
       <li class="list-group-item">
@@ -147,11 +165,338 @@
           One car will be heading in earlier to catch the round table session; Ps Geoff, Grant Robinson, LB &amp; Mark Mahoney.
         </p>
       </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            6:00pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Friday the 1st of August<br>
+            </span>
+          </small>
+          <i class="fa fa-tags"></i>
+          Conference Check In
+        </h4>
+        <p class="list-group-item-text">
+          Checking in at Enjoy Church, West Campus 41 Lance Road, Sunshine North, VIC, 3020
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            7:30pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Friday the 1st of August<br>
+            </span>
+          </small>
+          <i class="fa fa-sliders"></i>
+          Session One
+        </h4>
+        <p class="list-group-item-text">
+          Opening Night Session 1<br>Hang around after the session for supper.
+        </p>
+      </li>
     </ul>
-    <div class="panel-footer">
+    <div class="panel-body">
+      <h3>Saturday the 2nd of August</h3>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            7:00am
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-cutlery"></i>
+          Breakfast
+        </h4>
+        <p class="list-group-item-text">
+          Grab something in the hotel or at the nearby shopping centre, ensure you get some cash out for lunch.
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            8:00am
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-car"></i>
+          Check Out &amp; Travel to Venue
+        </h4>
+        <p class="list-group-item-text">
+          Hotel check out, and then head to Enjoy Church.
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            8:30am
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-clock-o"></i>
+          Arrive at Venue
+        </h4>
+        <p class="list-group-item-text">
+          Venue &amp; Check In Area Open.
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            9:30am
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-sliders"></i>
+          Session Two
+        </h4>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            11:00am
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-sliders"></i>
+          Session Three
+        </h4>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            12:00pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-cutlery"></i>
+          Lunch Break
+        </h4>
+        <p class="list-group-item-text">
+          Food is available to purchase on site, no ATMs so ensure you get cash out.
+        </p>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            1:00pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-sliders"></i>
+          Session Four
+        </h4>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            2:00pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-sliders"></i>
+          Session Five
+        </h4>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            4:30pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-car"></i>
+          Drive to Airport
+        </h4>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <small>
+            7:00pm
+            <span class="visible-xs-inline hidden-sm hidden-md hidden-lg">
+              Saturday the 2nd of August<br>
+            </span>
+          </small>
+          <i class="fa fa-plane"></i>
+          Flight from Melbourne to Brisbane.
+        </h4>
+        <p class="list-group-item-text">
+          <strong>VA351</strong><br>MELBOURNE, AUSTRALIA (Terminal 3) 7:00pm to Brisbane, Australia (Domestic Terminal) 9:10pm.
+          <ul>
+            <li>XNRPIY Mr Grant Robinson</li>
+            <li>XNRPIY Mr Mark Mohoney</li>
+            <li>RXMTBH Mr Geoff Blight</li>
+            <li>RXMTBH Mr Lex Moir</li>
+            <li>RXMTBH Mr Samson Rowaro</li>
+            <li>RXMTBH Mr Craig Lang</li>
+            <li>RXMTBH Mr Jamie Pensa</li>
+            <li>RXMTBH Mr Ben Johnston</li>
+          </ul>
+        </p>
+      </li>
+    </ul>
+    <div class="panel-footer hidden-print">
       Itinerary
-      <p class="pull-right"><a href="#top">Top</a></p>
+      <p class="pull-right"><button class="btn top btn-xs"><i class="fa fa-chevron-up"></i></button></p>
     </div>
   </div>
+</template>
 
+<template name="transport">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">
+        Car Hire
+      </h1>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <p class="list-group-item-text">
+            <ul class="unstyled">
+              <li>Supplier: East Coast Rentals</li>
+              <li>Tel: 0061 393303529</li>
+            </ul>
+            2 Tarmac Drive Melbourne - 3043 After You Have Collected Your Luggage Please Call +61-3-9330-3529 And Make Your Way Out Of The Terminal Towards The Car Park, Cross First Lane Of Traffic To The Medium Strip Collection Area Where You Will Be Collected.
+          </p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <p class="list-group-item-text">
+            <strong>Pick Up</strong>
+            <ul class="unstyled">
+              <li>Pickup: 01/08/2014 at 08:30</li>
+              <li>Collect: Melbourne Airport</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <p class="list-group-item-text">
+            <strong>Drop Off</strong>
+            <ul>
+              <li>Drop off: 02/08/2014 at 19:00</li>
+              <li>Return: Melbourne Airport</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>Grant Robinson</h3>
+              <p>
+                <ul class="unstyled">
+                  <li>Car: Toyota Camry or Similar</li>
+                  <li>Booking Reference Number: 330459742</li>
+                  <li>Confirmation Number: R0G0XS</li>
+                  <li>Insurance: Do not purchase at desk, already have excess cover</li>
+                  <li>Links: <a href="https://secure.rentalcars.com/MyRes.do?booking.contact.email=cba.card%40lifechurchcentral.com&prefcurrency=AUD&cor=AU&preflang=EN&serverName=www.rentalcars.com&booking.reference=330459742&affiliateCode=google">Booking</a></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>Lex Moir</h3>
+              <p>
+                <ul class="unstyled">
+                  <li>Car: Toyota Camry or Similar</li>
+                  <li>Booking Reference Number: 361290755</li>
+                  <li>Confirmation Number: R0G0XN</li>
+                  <li>Note: Booked as Mark Mahoney driving, changed.</li>
+                  <li>Insurance: Do not purchase at desk, already have excess cover</li>
+                  <li>Links: <a href="https://secure.rentalcars.com/MyRes.do?booking.contact.email=cba.card%40lifechurchcentral.com&prefcurrency=AUD&cor=AU&preflang=EN&serverName=www.rentalcars.com&booking.reference=361290755&affiliateCode=google">Booking</a></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer hidden-print">
+      Car Hire
+      <p class="pull-right"><button class="btn top btn-xs"><i class="fa fa-chevron-up"></i></button></p>
+    </div>
+  </div>
+</template>
+
+<template name="accommodation">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Accommodation</h1>
+    </div>
+    <div class="panel-body">
+      <p class="list-group-item-text">
+        <strong>Mercure Melbourne Caroline Springs</strong>
+        <ul class="unstyled">
+          <li>Email: reception@westwatershotel.com.au</li>
+          <li>Tel: (+61)03/83580555</li>
+          <li>Address: 10/20 Lake Street, 3023 CAROLINE SPRINGS</li>
+          <li>Links: <a href="http://www.mercure.com/gb/hotel-8249-mercure-melbourne-caroline-springs/index.shtml">Hotel</a></li>
+        </ul>
+      </p>
+      <p class="list-group-item-text">
+        <strong>Reservation</strong>
+        <ul class="unstyled">
+          <li>Reservation name: Mr. Geoff Blight</li>
+          <li>Reservation number: I56-05UZ</li>
+        </ul>
+      </p>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <strong>Room 1</strong><br>
+              Room 1: King-size bed (Grant &amp; Mark) + Sofa bed (LB)
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <strong>Room 2</strong><br>
+              King-size bed (Lex &amp; Jamie) + Sofa bed (Sam &amp; Craig)
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <strong>Room 3</strong><br>
+              King-size bed (Ps Geoff)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer hidden-print">
+      Accommodation
+      <p class="pull-right"><button class="btn top btn-xs"><i class="fa fa-chevron-up"></i></button></p>
+    </div>
+  </div>
+</template>
+
+<template name="itinerary">
+  {{>header}}
+  {{>UI.dynamic template=section}}
+</template>
+
+<template name="all">
+  {{>info}}
+  {{>schedule}}
+  {{>transport}}
+  {{>accommodation}}
 </template>
