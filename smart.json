@@ -1,6 +1,7 @@
 {
   "packages": {
     "bootstrap-readable": {},
-    "iron-router": {}
+    "iron-router": {},
+    "font-awesome": {}
   }
 }

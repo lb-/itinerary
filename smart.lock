@@ -7,6 +7,9 @@
       },
       "iron-router": {
         "version": "0.7.1"
+      },
+      "font-awesome": {
+        "version": "4.1.0"
       }
     },
     "packages": {
@@ -19,6 +22,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.7.1",
         "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
