@@ -1,17 +1,18 @@
 <template name="main">
   <head>
     <title>Itinerary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div class="container">
       {{> yield}}
     </div>
-    {{>nav}}
+    {{>yield region='nav'}}
   </body>
 </template>
 
 <template name="home">
-  <h1>Itineraries</h1>
+  <h1>Life Church Itineraries</h1>
 </template>
 
 <template name="nav">

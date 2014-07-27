@@ -30,6 +30,10 @@ if (Meteor.isClient) {
       window.scrollTo(0,0);
     },
   });
+
+  window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+  }, false);
 }
 
 if (Meteor.isServer) {

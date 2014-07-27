@@ -8,3 +8,5 @@ bootstrap-readable
 iron-router
 font-awesome
 timesync
+fastclick
+fast-render

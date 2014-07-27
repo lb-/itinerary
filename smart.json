@@ -3,6 +3,8 @@
     "bootstrap-readable": {},
     "iron-router": {},
     "font-awesome": {},
-    "timesync": {}
+    "timesync": {},
+    "fastclick": {},
+    "fast-render": {}
   }
 }
